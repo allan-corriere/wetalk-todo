@@ -1,0 +1,4 @@
+{
+    "name": "wetalk-todo",
+    "workspaces": ["packages/todo-backend", "packages/todo-frontend"]
+  }
