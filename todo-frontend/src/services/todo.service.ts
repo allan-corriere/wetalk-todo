@@ -15,7 +15,14 @@ export class TodoService {
   }
 
   getTodo(uuid: string): Observable<Todo> {
-    return this.http.get<Todo>(`/todo/${uuid}`);
+    return this.http.get<Todo>(`http://localhost:3000/todo/${uuid}`);
+  }
+
+  updateTodo(uuid: string, updateTodo: any): Observable<Todo> {
+    return this.http.patch<Todo>(
+      `http://localhost:3000/todo/${uuid}`,
+      updateTodo
+    );
   }
 
   createTodo(createTodoDto: CreateTodoDto): Observable<Todo> {
@@ -23,6 +30,6 @@ export class TodoService {
   }
 
   deleteTodo(uuid: string): Observable<any> {
-    return this.http.delete(`/todo/${uuid}`);
+    return this.http.delete(`http://localhost:3000/todo/${uuid}`);
   }
 }

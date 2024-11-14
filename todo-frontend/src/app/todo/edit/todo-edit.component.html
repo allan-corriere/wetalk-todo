@@ -1,0 +1,17 @@
+<h1>Update Todo<h1>
+  <form [formGroup]="todoForm" (ngSubmit)="onSubmit()">
+    <label class="form-control w-full max-w-xs" for="title">
+      <div class="label">
+        <span class="label-text">Title</span>
+      </div>
+      <input id="title" type="text" class="input input-bordered w-full max-w-xs" formControlName="title">
+    </label>
+
+    <label class="form-control w-full max-w-xs" for="description">
+      <div class="label">
+        <span class="label-text">Description</span>
+      </div>
+      <input id="description" type="text" class="input input-bordered w-full max-w-xs" formControlName="description">
+    </label>
+    <button type="submit" [disabled]="!todoForm.valid" class="btn">Update</button>
+  </form>
