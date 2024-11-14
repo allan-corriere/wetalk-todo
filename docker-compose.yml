@@ -3,22 +3,9 @@ services:
     image: postgres:17
     restart: always
     env_file:
-      - "local.env"
+      - ".env.local"
     container_name: todo-db
     volumes:
       - ./pgdata:/var/lib/postgresql/data
     ports:
       - "5432:5432"
-
-  todo-backend:
-    build:
-      context: ./todo-backend
-      dockerfile: Dockerfile
-      restart: always
-      depends_on:
-        - todo-db
-      container_name: todo-backend
-      ports:
-        - "3000:3000"
-      env_file:
-        - "local.env"
