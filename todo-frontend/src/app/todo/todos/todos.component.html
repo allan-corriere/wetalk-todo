@@ -1,3 +1,7 @@
 @if (todos$ | async; as todos) {
   <todo-list [todoList]="todos"></todo-list>
 }
+<a routerLink="/create" routerLinkActive="active" class="btn btn-primary">
+  <fa-icon [icon]="faPlus"></fa-icon>
+  Create a new todo
+</a>
