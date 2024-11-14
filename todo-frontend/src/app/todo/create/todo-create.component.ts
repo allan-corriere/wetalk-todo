@@ -7,6 +7,7 @@ import {
 } from '@angular/forms';
 import { TodoService } from '../../../services/todo.service';
 import { CreateTodoDto } from '../../../dto/create-todo.dto';
+import { Router } from '@angular/router';
 
 @Component({
   standalone: true,
@@ -26,7 +27,7 @@ export class TodoCreate {
     description: new FormControl('', [Validators.maxLength(255)]),
   });
 
-  constructor(private todoService: TodoService) {}
+  constructor(private todoService: TodoService, private router: Router) {}
 
   onSubmit() {
     const createTodoDto: CreateTodoDto = {
@@ -34,7 +35,7 @@ export class TodoCreate {
       description: this.todoForm.value.description!,
     };
     this.todoService.createTodo(createTodoDto).subscribe((todo) => {
-      console.log(todo);
+      this.router.navigate(['/']);
     });
   }
 }

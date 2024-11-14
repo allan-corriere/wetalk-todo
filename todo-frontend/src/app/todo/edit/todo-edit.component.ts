@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Todo } from '../../../entities/todo.entity';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { TodoService } from '../../../services/todo.service';
-import { AsyncPipe } from '@angular/common';
 import {
   FormControl,
   FormGroup,
@@ -36,6 +35,7 @@ export class TodoEdit {
 
   constructor(
     private route: ActivatedRoute,
+    private router: Router,
     private todoService: TodoService
   ) {}
 
@@ -53,7 +53,7 @@ export class TodoEdit {
       description: this.todoForm.value.description!,
     };
     this.todoService.updateTodo(this.uuid!, updateTodoDto).subscribe((todo) => {
-      console.log(todo);
+      this.router.navigate(['/']);
     });
   }
 }
