@@ -5,6 +5,6 @@ import { TodoEdit } from './todo/edit/todo-edit.component';
 
 export const routes: Routes = [
   { path: '', component: TodosComponent },
-  { path: 'todo/create', component: TodoCreate },
-  { path: 'todo/edit/:uuid', component: TodoEdit },
+  { path: 'create', component: TodoCreate },
+  { path: 'edit/:uuid', component: TodoEdit },
 ];

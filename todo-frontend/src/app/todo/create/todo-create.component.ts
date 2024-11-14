@@ -6,7 +6,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { TodoService } from '../../../services/todo.service';
-import { CreateTodoDto } from '../../dto/create-todo.dto';
+import { CreateTodoDto } from '../../../dto/create-todo.dto';
 
 @Component({
   standalone: true,

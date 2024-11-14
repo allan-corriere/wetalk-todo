@@ -10,11 +10,11 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import { UpdateTodoDto } from '../../dto/update-todo.dto';
+import { UpdateTodoDto } from '../../../dto/update-todo.dto';
 
 @Component({
   standalone: true,
-  imports: [ReactiveFormsModule, AsyncPipe],
+  imports: [ReactiveFormsModule],
   templateUrl: './todo-edit.component.html',
 })
 export class TodoEdit {

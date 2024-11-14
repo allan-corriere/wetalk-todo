@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Todo } from '../entities/todo.entity';
-import { CreateTodoDto } from '../app/dto/create-todo.dto';
+import { CreateTodoDto } from '../dto/create-todo.dto';
 import { Observable } from 'rxjs';
 
 @Injectable({
