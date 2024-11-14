@@ -1,0 +1,7 @@
+<ul class="m-2">
+  @for (todo of todoList; track todo.uuid) {
+    <li class="pt-4">
+      <todo-list-item [todoTitle]="todo.title" [todoDescription]="todo.description" />
+    </li>
+  }
+</ul>
