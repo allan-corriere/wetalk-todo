@@ -1,9 +1,7 @@
 <ul class="m-2">
   @for (todo of todoList; track todo.uuid) {
     <li class="pt-4">
-      <a routerLink="/edit/{{todo.uuid}}" routerLinkActive="active">
-        <todo-list-item [todoTitle]="todo.title" [todoDescription]="todo.description" />
-      </a>
+      <todo-list-item [todoTitle]="todo.title" [todoDescription]="todo.description" [todoUuid]="todo.uuid"/>
     </li>
   }
 </ul>

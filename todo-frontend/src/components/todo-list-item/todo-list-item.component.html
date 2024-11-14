@@ -1,6 +1,25 @@
 <div class="card bg-base-100 shadow-xl">
   <div class="card-body">
-    <h2 class="card-title">{{todoTitle}}</h2>
-    <p>{{todoDescription}}</p>
+    <a routerLink="/edit/{{todoUuid}}" routerLinkActive="active">
+      <h2 class="card-title">{{todoTitle}}</h2>
+      <p>{{todoDescription}}</p>
+    </a>
+    <div class="card-actions justify-end">
+      <button class="btn btn-circle btn-neutral" (click)="showModal()"><fa-icon [icon]="faTrash"></fa-icon></button>
+      <dialog id="modal_{{todoUuid}}" class="modal">
+        <div class="modal-box">
+          <h3 class="text-lg font-bold">Delete todo</h3>
+          <p class="py-4">Are you sure to delete "{{todoTitle}}" todo?</p>
+          <div class="modal-action">
+            <form method="dialog" class="flex gap-2">
+              <!-- if there is a button in form, it will close the modal -->
+              <button class="btn btn-error" (click)="deleteTodo()">Delete</button>
+              <button class="btn">Close</button>
+            </form>
+          </div>
+        </div>
+      </dialog>
+    </div>
   </div>
 </div>
+
